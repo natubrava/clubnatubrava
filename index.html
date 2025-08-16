@@ -4,93 +4,141 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Club Natubrava – Como Funciona</title>
+<meta name="description" content="Entenda, em poucos minutos, como funciona o Club Natubrava: giftback, ofertas antecipadas e vantagens para clientes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;margin:0;padding:0;color:#2d2d2d;background:#fff}
-header{background:#0d6848;color:#fff;padding:2.5rem 1rem;text-align:center}
-header h1{margin:0;font-size:2rem}
-section{padding:1.75rem 1rem;max-width:820px;margin:auto}
-h2{color:#0d6848;margin:1.5rem 0 0.75rem;font-size:1.4rem}
-ul{list-style:none;padding:0;margin:0}
-ul li::before{content:"🌿 ";color:#0d6848}
-ol{padding-left:1.2rem}
-ol li{margin-bottom:0.5rem}
-.faq dt{font-weight:bold;margin-top:1rem}
-footer{background:#f7f7f7;padding:1.5rem 1rem;text-align:center;color:#555;font-size:0.9rem}
-a{color:#0d6848;text-decoration:none}
-a:hover{text-decoration:underline}
-@media(min-width:600px){header h1{font-size:2.4rem}h2{font-size:1.6rem}section{padding:2rem}}
+:root{
+  --bg:#f5f7f6;      /* fundo suave */
+  --surface:#ffffff;  /* cartões */
+  --text:#1f2937;     /* cinza-900 */
+  --muted:#6b7280;    /* cinza-500 */
+  --primary:#16a34a;  /* verde */
+  --primary2:#14b8a6; /* teal */
+  --shadow:0 10px 25px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
+.container{max-width:920px;margin:0 auto;padding:1.25rem}
+header{
+  background:linear-gradient(135deg,var(--primary) 0%, var(--primary2) 100%);
+  color:#fff;
+  padding:3.2rem 1.25rem;
+  text-align:center;
+}
+header h1{margin:0;font-size:2.2rem;letter-spacing:.2px}
+header p{margin:.75rem auto 0;opacity:.92;max-width:720px}
+.section{padding:2rem 0}
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:1.4rem 1.25rem;margin:1rem 0}
+.card h2{margin:.25rem 0 0.8rem;font-size:1.35rem;color:#0f5132}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding-left:1.75rem;position:relative;margin:.6rem 0}
+.list li::before{content:'✔';position:absolute;left:.3rem;top:0;color:var(--primary);font-weight:700}
+.hero-cta{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.2rem}
+.btn{display:inline-block;border:none;padding:.9rem 1.25rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease;box-shadow:0 8px 20px rgba(22,163,74,.25);background:linear-gradient(135deg,var(--primary) 0%, var(--primary2) 100%)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(20,184,166,.28)}
+.btn:active{transform:translateY(0)}
+.note{font-size:.95rem;color:var(--muted)}
+.grid{display:grid;gap:1rem}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.faq dt{font-weight:700;margin-top:1rem}
+.faq dd{margin:.25rem 0 1rem;color:var(--text)}
+footer{padding:2.2rem 0;color:#374151;text-align:center}
+.address{margin:.5rem 0 1rem;color:#374151}
+.whatsapp-cta{margin-top:1.2rem}
+.small{font-size:.92rem;color:var(--muted)}
 </style>
 </head>
 <body>
-<header>
-  <h1>Bem‑vindo ao Club Natubrava</h1>
-  <p>Economize, receba ofertas antecipadas e aproveite benefícios exclusivos.</p>
-</header>
+  <header>
+    <div class="container">
+      <h1>Bem-vindo ao <strong>Club Natubrava</strong></h1>
+      <p>Uma forma simples de economizar e receber novidades antes de todo mundo. Sem burocracia: comprou, ganhou <strong>giftback</strong> e usa na próxima compra.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20fazer%20parte%20do%20Club%20Natubrava.%20%F0%9F%8C%BF">Quero participar pelo WhatsApp</a>
+      </div>
+    </div>
+  </header>
 
-<section>
-<h2>Por que aderir?</h2>
-<ul>
-  <li>Crédito de volta (giftback) para usar como desconto na próxima compra.</li>
-  <li>Ofertas antecipadas e promoções relâmpago só para membros.</li>
-  <li>Brindes sazonais e ações especiais.</li>
-  <li>Comunicação direta pelo WhatsApp — sem enrolação.</li>
-</ul>
-</section>
+  <main class="container">
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Por que participar</h2>
+          <ul class="list">
+            <li><strong>Giftback</strong>: crédito de volta para usar como desconto na próxima compra.</li>
+            <li><strong>Ofertas antecipadas</strong> e promoções relâmpago exclusivas para membros.</li>
+            <li><strong>Brindes sazonais</strong> em ações especiais do clube.</li>
+            <li><strong>Lista de transmissão no WhatsApp</strong> para avisos objetivos — sem grupos e sem bagunça.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Como participar</h2>
+          <ul class="list">
+            <li>Cadastre-se no caixa <em>ou</em> envie <strong>“Quero participar”</strong> pelo WhatsApp oficial (<a href="https://wa.me/554733483186">47 3348-3186</a>).</li>
+            <li>Salve nosso número e pronto: seu perfil é ativado.</li>
+          </ul>
+          <p class="note">Assim que houver compra elegível, você receberá uma mensagem automática com seu giftback.</p>
+        </div>
+      </div>
+    </section>
 
-<section>
-<h2>Como entrar</h2>
-<ol>
-  <li>Envie <strong>“Quero participar”</strong> para nosso WhatsApp oficial: <a href="https://wa.me/554733483186">47 3348‑3186</a> ou cadastre‑se no caixa.</li>
-  <li>Salve nosso número nos contatos e pronto! Seu perfil é ativado na hora.</li>
-</ol>
-</section>
+    <section class="section">
+      <div class="card">
+        <h2>Como funciona, na prática</h2>
+        <ul class="list">
+          <li>Após uma compra elegível, o sistema envia <strong>automaticamente</strong> uma mensagem no seu WhatsApp com o <strong>valor do giftback</strong> e o <strong>prazo de validade</strong> (geralmente entre <strong>30 e 45 dias</strong>).</li>
+          <li>Para usar, volte dentro do prazo e informe seu <strong>nome ou celular</strong> no caixa. O desconto é aplicado na hora, nos produtos elegíveis.</li>
+          <li><strong>Produtos em promoção</strong> não geram e não aceitam giftback.</li>
+        </ul>
+        <p class="note">O percentual e demais condições podem variar em campanhas específicas. As mensagens sempre trazem as informações atualizadas.</p>
+      </div>
+    </section>
 
-<section>
-<h2>Como funciona o Giftback</h2>
-<p>Cada compra elegível gera um valor em giftback — um crédito de desconto para ser usado na sua próxima visita. O sistema envia automaticamente uma mensagem no seu WhatsApp com:</p>
-<ul>
-  <li>Valor exato do seu giftback;</li>
-  <li>Prazo de validade (até 45&nbsp;dias);</li>
-  <li>Link rápido para consultar saldo quando quiser.</li>
-</ul>
-<p><strong>Obs.:</strong> Produtos já em promoção não geram nem aceitam giftback.</p>
-</section>
+    <section class="section">
+      <div class="card">
+        <h2>Não é programa de pontos</h2>
+        <p>Esqueça pontuação e tabelas. O benefício aqui é direto: você recebe um <strong>crédito</strong> e usa como <strong>desconto</strong> na próxima compra. Simples e transparente.</p>
+      </div>
+    </section>
 
-<section>
-<h2>Usando seu crédito</h2>
-<ol>
-  <li>Volte à loja dentro do prazo informado.</li>
-  <li>Diga seu <strong>nome ou celular</strong> no caixa.</li>
-  <li>O desconto é aplicado automaticamente nos produtos elegíveis.</li>
-</ol>
-</section>
+    <section class="section">
+      <div class="card">
+        <h2>Perguntas frequentes</h2>
+        <dl class="faq">
+          <dt>O “giftback” vale para qualquer produto?</dt>
+          <dd>Para todos os itens <strong>fora de promoção</strong> e sem outras restrições indicadas na loja.</dd>
 
-<section>
-<h2>Não é programa de pontos 😉</h2>
-<p>Esqueça contas complicadas ou tabelas de pontuação. Aqui o benefício é direto: <strong>comprou, ganhou giftback, usou</strong>. Sem milhas, sem acumular números, sem burocracia.</p>
-</section>
+          <dt>Como consulto meu saldo?</dt>
+          <dd>Responda a última mensagem automática do clube ou pergunte no caixa informando seu nome ou celular.</dd>
 
-<section>
-<h2>Perguntas frequentes</h2>
-<dl class="faq">
-  <dt>O giftback vale para qualquer produto?</dt>
-  <dd>Para todos os itens fora de promoção e sem outras restrições indicadas na loja.</dd>
+          <dt>Qual é a validade?</dt>
+          <dd>O prazo vem escrito na mensagem automática (normalmente entre 30 e 45 dias). Após esse período, o crédito expira.</dd>
 
-  <dt>Posso juntar vários giftbacks?</dt>
-  <dd>Cada compra gera um crédito independente. Você pode escolher usar o maior saldo disponível ou aguardar a validade de outro — mas não é possível somar dois créditos na mesma compra.</dd>
+          <dt>É a mesma coisa que “pontos”?</dt>
+          <dd>Não. É um crédito direto para desconto na próxima compra, sem acúmulo de pontos.</dd>
+        </dl>
+      </div>
+    </section>
 
-  <dt>Como acompanho meu saldo?</dt>
-  <dd>É só responder a última mensagem automática ou perguntar no caixa.</dd>
+    <section class="section" id="contato">
+      <div class="card" style="text-align:center">
+        <h2>Ainda com dúvidas? Fale com a gente!</h2>
+        <p class="address">📍 Rod. Osvaldo Reis, 3547 – Praia Brava, Itajaí‑SC</p>
+        <p class="small">Clique abaixo para chamar no WhatsApp com mensagem automática:</p>
+        <div class="whatsapp-cta">
+          <a class="btn" href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20fazer%20parte%20do%20Club%20Natubrava.%20%F0%9F%8C%BF">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <dt>E se eu esquecer?</dt>
-  <dd>Após o prazo informado, o crédito expira automaticamente.</dd>
-</dl>
-</section>
-
-<footer>
-<p>Dúvidas? Fale com a gente no WhatsApp ou visite:<br>
-Rod. Osvaldo Reis, 3547 – Praia Brava, Itajaí‑SC</p>
-</footer>
-
+  <footer>
+    <div class="container small">
+      © NatuBrava Produtos Naturais • Praia Brava / Itajaí‑SC
+    </div>
+  </footer>
 </body>
 </html>
