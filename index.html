@@ -3,145 +3,788 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Club Natubrava – Como Funciona</title>
-<meta name="description" content="Entenda, em poucos minutos, como funciona o Club Natubrava: giftback, ofertas antecipadas e vantagens para clientes.">
+<title>Club Natubrava – Seu clube de vantagens exclusivas</title>
+<meta name="description" content="Conheça o Club Natubrava: descontos especiais, giftback, ofertas exclusivas e benefícios pensados para você.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f5f7f6;      /* fundo suave */
-  --surface:#ffffff;  /* cartões */
-  --text:#1f2937;     /* cinza-900 */
-  --muted:#6b7280;    /* cinza-500 */
-  --primary:#16a34a;  /* verde */
-  --primary2:#14b8a6; /* teal */
-  --shadow:0 10px 25px rgba(0,0,0,.06);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
-.container{max-width:920px;margin:0 auto;padding:1.25rem}
-header{
-  background:linear-gradient(135deg,var(--primary) 0%, var(--primary2) 100%);
-  color:#fff;
-  padding:3.2rem 1.25rem;
-  text-align:center;
+
+:root {
+  --primary: #16a34a;
+  --primary-light: #22c55e;
+  --primary-dark: #15803d;
+  --secondary: #0891b2;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light-gray: #f1f5f9;
+  --white: #ffffff;
+  --max-width: 1100px;
+  --radius: 12px;
+  --transition: all 0.3s ease;
 }
-header h1{margin:0;font-size:2.2rem;letter-spacing:.2px}
-header p{margin:.75rem auto 0;opacity:.92;max-width:720px}
-.section{padding:2rem 0}
-.card{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:1.4rem 1.25rem;margin:1rem 0}
-.card h2{margin:.25rem 0 0.8rem;font-size:1.35rem;color:#0f5132}
-.list{list-style:none;padding:0;margin:0}
-.list li{padding-left:1.75rem;position:relative;margin:.6rem 0}
-.list li::before{content:'✔';position:absolute;left:.3rem;top:0;color:var(--primary);font-weight:700}
-.hero-cta{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.2rem}
-.btn{display:inline-block;border:none;padding:.9rem 1.25rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease;box-shadow:0 8px 20px rgba(22,163,74,.25);background:linear-gradient(135deg,var(--primary) 0%, var(--primary2) 100%)}
-.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(20,184,166,.28)}
-.btn:active{transform:translateY(0)}
-.note{font-size:.95rem;color:var(--muted)}
-.grid{display:grid;gap:1rem}
-@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-.faq dt{font-weight:700;margin-top:1rem}
-.faq dd{margin:.25rem 0 1rem;color:var(--text)}
-footer{padding:2.2rem 0;color:#374151;text-align:center}
-.address{margin:.5rem 0 1rem;color:#374151}
-.whatsapp-cta{margin-top:1.2rem}
-.small{font-size:.92rem;color:var(--muted)}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: var(--white);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: var(--white);
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-weight: 400;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Main Content */
+.main-content {
+  padding: 3rem 0;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.section-description {
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.benefit-card {
+  background: var(--white);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.benefit-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.benefit-description {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.benefit-highlights {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-gray);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  color: var(--primary);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* How it Works */
+.steps-section {
+  background: var(--light-gray);
+  padding: 3rem 0;
+  border-radius: var(--radius);
+  margin: 3rem 0;
+}
+
+.steps-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+
+.step-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.step-description {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Info Cards */
+.info-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.info-card {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
+.info-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.info-list {
+  list-style: none;
+}
+
+.info-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  color: var(--dark);
+}
+
+.info-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: var(--white);
+  padding: 3rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--light-gray);
+  padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-arrow {
+  transition: var(--transition);
+  font-size: 1.25rem;
+  color: var(--gray);
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  color: var(--gray);
+  line-height: 1.7;
+  padding-right: 2rem;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Alert Box */
+.alert {
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(8, 145, 178, 0.1));
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+
+.alert-title {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.alert-text {
+  color: var(--gray);
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 3rem 0 2rem;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-info {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.footer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.footer-button:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 2rem 0;
+  padding-top: 2rem;
+}
+
+.footer-copyright {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .header {
+    padding: 3rem 1.5rem;
+  }
+}
 </style>
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container">
-      <h1>Bem-vindo ao <strong>Club Natubrava</strong></h1>
-      <p>Uma forma simples de economizar e receber novidades antes de todo mundo. Sem burocracia: comprou, ganhou <strong>giftback</strong> e usa na próxima compra.</p>
-      <div class="hero-cta">
-        <a class="btn" href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20fazer%20parte%20do%20Club%20Natubrava.%20%F0%9F%8C%BF">Quero participar pelo WhatsApp</a>
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">🌿</span>
+          <span>NatuBrava</span>
+        </div>
+        <h1>Club Natubrava</h1>
+        <p class="subtitle">
+          O jeito mais inteligente de comprar produtos naturais.<br>
+          Benefícios exclusivos para quem faz parte.
+        </p>
+        <a href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20fazer%20parte%20do%20Club%20Natubrava." class="cta-button">
+          <span>💬</span> Participar pelo WhatsApp
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="grid">
-        <div class="card">
-          <h2>Por que participar</h2>
-          <ul class="list">
-            <li><strong>Giftback</strong>: crédito de volta para usar como desconto na próxima compra.</li>
-            <li><strong>Ofertas antecipadas</strong> e promoções relâmpago exclusivas para membros.</li>
-            <li><strong>Brindes sazonais</strong> em ações especiais do clube.</li>
-            <li><strong>Lista de transmissão no WhatsApp</strong> para avisos objetivos — sem grupos e sem bagunça.</li>
-          </ul>
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Benefícios principais -->
+      <section class="section">
+        <h2 class="section-title text-center">Vantagens exclusivas do clube</h2>
+        <p class="section-description text-center">
+          Mais que um programa de fidelidade, uma experiência completa
+        </p>
+        
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <h3 class="benefit-title">Descontos Especiais</h3>
+            <p class="benefit-description">
+              Produtos selecionados com preços exclusivos para membros do clube. 
+              Novos itens em oferta regularmente.
+            </p>
+            <div class="benefit-highlights">
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Até 30% de desconto em produtos selecionados</span>
+              </div>
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Ofertas renovadas periodicamente</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h3 class="benefit-title">Giftback</h3>
+            <p class="benefit-description">
+              Compre e ganhe créditos de volta automaticamente. 
+              Use como desconto integral na próxima compra.
+            </p>
+            <div class="benefit-highlights">
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Em compras acima de R$ 50</span>
+              </div>
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Cupom enviado automaticamente</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <h3 class="benefit-title">Acesso Antecipado</h3>
+            <p class="benefit-description">
+              Seja o primeiro a conhecer lançamentos e aproveitar 
+              promoções relâmpago exclusivas.
+            </p>
+            <div class="benefit-highlights">
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Novidades antes de todos</span>
+              </div>
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Promoções relâmpago VIP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🎁</div>
+            <h3 class="benefit-title">Mimos e Brindes</h3>
+            <p class="benefit-description">
+              Surpresas especiais em datas comemorativas e 
+              campanhas exclusivas para membros.
+            </p>
+            <div class="benefit-highlights">
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Brindes em datas especiais</span>
+              </div>
+              <div class="highlight-item">
+                <span class="check-icon">✓</span>
+                <span>Ações exclusivas do clube</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h2>Como participar</h2>
-          <ul class="list">
-            <li>Cadastre-se no caixa <em>ou</em> envie <strong>“Quero participar”</strong> pelo WhatsApp oficial (<a href="https://wa.me/554733483186">47 3348-3186</a>).</li>
-            <li>Salve nosso número e pronto: seu perfil é ativado.</li>
-          </ul>
-          <p class="note">Assim que houver compra elegível, você receberá uma mensagem automática com seu giftback.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="card">
-        <h2>Como funciona, na prática</h2>
-        <ul class="list">
-          <li><strong>Elegibilidade:</strong> compras a partir de <strong>R$ 50,00</strong> em produtos <strong>fora de promoção</strong> geram giftback.</li>
-          <li>Após uma compra elegível, o sistema envia <strong>automaticamente</strong> uma mensagem no seu WhatsApp com o <strong>valor do giftback</strong> e o <strong>prazo de validade</strong> (geralmente entre <strong>30 e 45 dias</strong>).</li>
-          <li>Para usar, volte dentro do prazo e informe seu <strong>nome ou celular</strong> no caixa. O desconto é aplicado na hora, nos produtos elegíveis.</li>
-          <li><strong>Produtos em promoção</strong> não geram e não aceitam giftback.</li>
-        </ul>
-        <p class="note">O percentual e demais condições podem variar em campanhas específicas. As mensagens sempre trazem as informações atualizadas.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h2>Não é programa de pontos</h2>
-        <p>Esqueça pontuação e tabelas. O benefício aqui é direto: você recebe um <strong>crédito</strong> e usa como <strong>desconto</strong> na próxima compra. Simples e transparente.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h2>Perguntas frequentes</h2>
-        <dl class="faq">
-          <dt>O “giftback” vale para qualquer produto?</dt>
-          <dd>Para todos os itens <strong>fora de promoção</strong> e sem outras restrições indicadas na loja.</dd>
-
-          <dt>Como consulto meu cupom (giftback)?</dt>
-          <dd>O giftback é um <strong>cupom de uso integral<\/strong> na próxima compra. Para verificar se há um cupom ativo, conferir a validade ou se sua compra foi elegível e a mensagem não chegou, fale no nosso WhatsApp oficial (<a href=\"https:\/\/wa.me\/554733483186\">47 3348‑3186<\/a>) ou pergunte no caixa. <span class=\"small\"><strong>Obs.:<\/strong> as mensagens automáticas vêm de um número técnico (API) e não recebem respostas.<\/span></dd>
-
+      <!-- Como funciona -->
+      <section class="steps-section">
+        <div class="container">
+          <h2 class="section-title text-center">Como participar?</h2>
+          <p class="section-description text-center">
+            Simples, rápido e sem burocracia
+          </p>
           
-
-          <dt>Qual é a validade?</dt>
-          <dd>O prazo vem escrito na mensagem automática (normalmente entre 30 e 45 dias). Após esse período, o cupom expira.</dd>
-
-          <dt>É a mesma coisa que “pontos”?</dt>
-          <dd>Não. Aqui não há acumulação de pontos; você recebe um cupom de desconto para usar na próxima compra.</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section" id="contato">
-      <div class="card" style="text-align:center">
-        <h2>Ainda com dúvidas? Fale com a gente!</h2>
-        <p class="address">📍 Rod. Osvaldo Reis, 3547 – Praia Brava, Itajaí‑SC</p>
-        <p class="small">Clique abaixo para chamar no WhatsApp com mensagem automática:</p>
-        <div class="whatsapp-cta">
-          <a class="btn" href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20fazer%20parte%20do%20Club%20Natubrava.%20%F0%9F%8C%BF">Chamar no WhatsApp</a>
+          <div class="steps-grid">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Cadastre-se</h3>
+              <p class="step-description">
+                No caixa da loja ou pelo WhatsApp oficial
+              </p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Salve o número</h3>
+              <p class="step-description">
+                Adicione nosso WhatsApp para receber as vantagens
+              </p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Aproveite</h3>
+              <p class="step-description">
+                Comece a usar todos os benefícios imediatamente
+              </p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Economize</h3>
+              <p class="step-description">
+                Quanto mais você compra, mais vantagens acumula
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Informações importantes -->
+      <section class="section">
+        <h2 class="section-title text-center">Informações importantes</h2>
+        
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>📱 Comunicação pelo WhatsApp</h3>
+            <ul class="info-list">
+              <li>Lista de transmissão (sem grupos)</li>
+              <li>Apenas informações relevantes</li>
+              <li>Mensagens automáticas de benefícios</li>
+              <li>Respeito total à sua privacidade</li>
+            </ul>
+          </div>
+          
+          <div class="info-card">
+            <h3>💳 Sobre o Giftback</h3>
+            <ul class="info-list">
+              <li>Válido em produtos fora de promoção</li>
+              <li>Validade de 30 a 45 dias</li>
+              <li>Cupom de uso integral</li>
+              <li>Não acumula com outras promoções</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alert">
+          <div class="alert-title">💡 Importante saber</div>
+          <div class="alert-text">
+            O Club Natubrava não é um programa de pontos. Você recebe benefícios diretos: 
+            descontos exclusivos em produtos selecionados, cupons de giftback para usar integralmente 
+            e acesso a ofertas especiais. Tudo de forma simples e transparente.
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="faq-container">
+          <h2 class="section-title text-center">Perguntas frequentes</h2>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Preciso pagar para participar?
+              <span class="faq-arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+              Não! A participação no Club Natubrava é totalmente gratuita. 
+              Basta se cadastrar e começar a aproveitar as vantagens.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Como sei quais produtos estão com desconto especial?
+              <span class="faq-arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+              Os produtos com desconto exclusivo para membros são sinalizados na loja 
+              e também divulgados pelo WhatsApp. A lista é atualizada regularmente com 
+              novos itens e ofertas.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Como funciona o giftback?
+              <span class="faq-arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+              Em compras acima de R$ 50 (produtos fora de promoção), você recebe 
+              automaticamente uma mensagem no WhatsApp com um cupom de desconto 
+              para usar integralmente na próxima compra. O cupom tem validade 
+              de 30 a 45 dias.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Posso usar o giftback junto com os descontos especiais?
+              <span class="faq-arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+              O giftback vale para produtos fora de promoção. Produtos que já estão 
+              com desconto especial do clube ou outras promoções não aceitam giftback. 
+              Mas você pode aproveitar ambos os benefícios em compras diferentes!
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Como consulto meus benefícios?
+              <span class="faq-arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+              Você pode verificar seus cupons ativos e benefícios disponíveis 
+              perguntando no caixa da loja ou enviando mensagem para nosso 
+              WhatsApp oficial (47 3348-3186). As mensagens automáticas vêm 
+              de um número técnico que não recebe respostas.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer>
-    <div class="container small">
-      © NatuBrava Produtos Naturais • Praia Brava / Itajaí‑SC
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">🌿 Club Natubrava</div>
+        <div class="footer-info">
+          <p>📍 Rod. Osvaldo Reis, 3547 – Praia Brava, Itajaí-SC</p>
+          <p>📱 WhatsApp: (47) 3348-3186</p>
+        </div>
+        <a href="https://wa.me/554733483186?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Club%20Natubrava." class="footer-button">
+          💬 Fale conosco
+        </a>
+        <div class="footer-divider"></div>
+        <div class="footer-copyright">
+          © 2024 NatuBrava Produtos Naturais • Todos os direitos reservados
+        </div>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const wasActive = item.classList.contains('active');
+        
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+        });
+        
+        // Open clicked if wasn't active
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
